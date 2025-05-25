@@ -1,0 +1,15 @@
+.aboutContainer {
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutHeader {
+    margin: 0 auto 1em auto;
+}
+
+.aboutIntro {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}

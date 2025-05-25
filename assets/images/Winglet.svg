@@ -1,0 +1,12 @@
+<!-- Kangomroo -->
+<svg width="700" height="700" xmlns="http://www.w3.org/2000/svg">  
+  <path d="M 600 0
+           L 417.5 0
+           A 150 150 0 0 0 305.16 50.45
+           L 30 360
+           L 212.5 360
+           A 150 150 0 0 0 324.84 309.55
+           Z"
+        fill="#5992F5"
+        transform="translate(35 170)" />
+</svg>

@@ -1,0 +1,31 @@
+.projectsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    gap: 2em;
+}
+
+.projectItem {
+    display: flex;
+    flex-direction: row;
+    border: 20px #27489a solid;
+    padding: 1em;
+}
+
+.projectHeader {
+    font-size: 1.33em;
+}
+
+.projectType {
+    color: #27489a;
+}
+
+.projectImg {
+    width: 550px;
+    display: flex;
+    align-items: center;
+}
+
+.projectImg img {
+    width: 100%;
+}

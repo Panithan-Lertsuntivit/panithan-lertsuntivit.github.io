@@ -1,43 +1,45 @@
 <!-- HTML5 Document -->
-<!DOCTYPE html> 
+<!DOCTYPE html>
 
 <!-- HTML Tag -->
-<html>
-    <!-- Head Tag - contains information about website and where you load CSS and JavaScript files -->
-    <head>
-        <meta charset="utf-8">                  <!-- utf-8 is for encoding -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- For device rescaling -->
-        <title>My First Website</title>
+<html lang="en">
+<!-- Head Tag - contains information about website and where you load CSS and JavaScript files -->
 
-    </head>
+<head>
+    <meta charset="utf-8"> <!-- utf-8 is for encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For device rescaling -->
+    <title>Panithan Lertsuntivit | Home</title>
 
-    <!-- Body Tag - main content in webpage -->
-    <body>
-        <h1>My First Website</h1>
-        <h2>An HTML Playground</h2>
+    <!-- Loading CSS and JavaScript Files -->
+    <link rel="stylesheet" href="./stylesheets/style.css">
 
-        This is my very first website and I'm <b>extremely excited!</b>
+</head>
 
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+<!-- Body Tag - main content in webpage (Background is a bit colored) -->
 
-        <hr>
+<body style="background-color: #FFFDFC;">
+    <div class="container">
+        <h1 class="introHeader">Hello! My name is Panithan!</h1>
 
-        I'm following the tutorial based on this YouTube video. <br>
+        <div class="homeNavBar">
+            <a class="winglet" href="./index.html"><img src="./assets/images/Winglet.png" width="250"></a>
 
-        <!-- Link Tag - (target="blank" will open the link on a new page)-->
-        <a href="https://youtu.be/PlxWf493en4" target="blank">HTML Tutorial - How to Make a Super Simple Website</a>
-
-        <hr>
-
-        Here's an image of Berkeley! <br><br>
-
-        <img src="Berkeley.png" width="600" border="3">
-
-
-    </body>
-
-</html>    
+            <ul class="homeNavBarLinks">
+                <li>
+                    <a href="./projects.html">Projects</a>
+                </li>
+                <li>
+                    <a href="./experience.html">Experience</a>
+                </li>
+                <li>
+                    <a href="./about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
+
+</body>
+
+</html>

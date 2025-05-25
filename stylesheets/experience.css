@@ -1,0 +1,53 @@
+.experienceContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    gap: 2em;
+}
+
+.experienceItem {
+    display: flex;
+    flex-direction: row;
+    border: 20px #27489a solid;
+    padding: 1em;
+    gap: 1em;
+}
+
+.experienceHeaderText {
+    font-size: 1.33em;
+    margin: 0;
+}
+
+.experienceType {
+    color: #27489a;
+}
+
+.experienceThumbnail {
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    gap: 1em;
+}
+
+.experienceInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.experienceDate {
+    font-size: 0.6em;
+    color: #27489a;
+}
+
+.experienceImg {
+    display: flex;
+}
+
+.experienceImg img {
+    width: 100%;
+}
+
+.positionTitle {
+    color: #27489a;
+}
