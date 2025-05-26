@@ -25,7 +25,7 @@
 .experienceThumbnail {
     display: flex;
     flex-direction: column;
-    width: 325px;
+    width: 500px;
     gap: 1em;
 }
 
@@ -36,12 +36,14 @@
 }
 
 .experienceDate {
-    font-size: 0.6em;
+    font-size: 32px;
     color: #27489a;
 }
 
 .experienceImg {
     display: flex;
+    /* border: [pattern] [color] [thickness] */
+    border: solid #5992F5 5px;
 }
 
 .experienceImg img {

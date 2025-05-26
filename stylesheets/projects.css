@@ -24,6 +24,8 @@
     width: 550px;
     display: flex;
     align-items: center;
+    /* border: [pattern] [color] [thickness] */
+    border: solid #5992F5 5px;
 }
 
 .projectImg img {

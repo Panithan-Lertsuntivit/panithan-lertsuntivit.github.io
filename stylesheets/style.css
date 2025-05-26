@@ -7,7 +7,7 @@ html, body {
     font-size: 36px;
     font-style: normal;
     margin: 0 auto;
-
+    background-color: #FFFDFC;
 }
 
 .container {
@@ -20,16 +20,15 @@ html, body {
 
 .introHeader {
     /* Top Right Bottom Left - Spacing Order */
-    margin: 50px 0px 30px 0px;
+    margin: 150px 0px 80px 0px;
 }
-
 
 
 .homeNavBar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
 }
 
 .homeNavBarLinks {
@@ -38,7 +37,7 @@ html, body {
     list-style-type: none;
     margin: 10;
     padding: 0;
-    gap: 30px;
+    gap: 60px;
 }
 
 .homeNavBarLinks a {
@@ -81,4 +80,19 @@ html, body {
 
 .winglet img:hover {
     opacity: 0.5;
+}
+
+/* For media devices */
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
 }
