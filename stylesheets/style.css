@@ -4,23 +4,37 @@
 html, body {
     font-family: "Kaisei Tokumin", serif;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 24px;
     font-style: normal;
     margin: 0 auto;
     background-color: #FFFDFC;
+}
+
+/* Element Sizes */
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1em;
+    max-width: 1000px; /* Max Width and Margins */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
     margin-bottom: 60px;
+    box-sizing: border-box; /* Defined height and width will include padding and border */
 }
 
 .introHeader {
     /* Top Right Bottom Left - Spacing Order */
-    margin: 150px 0px 80px 0px;
+    margin: 7rem 0rem 3.5rem 0rem;
+    text-align: center;
 }
 
 
@@ -28,7 +42,11 @@ html, body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
+    /* For Spacing */
+    justify-content: space-between; /* Distribution of items with equal spacing between */
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 3.5rem;
 }
 
 .homeNavBarLinks {
@@ -37,13 +55,14 @@ html, body {
     list-style-type: none;
     margin: 10;
     padding: 0;
-    gap: 60px;
+    gap: 3rem;
 }
 
 .homeNavBarLinks a {
     text-decoration: none;
     font-weight: 1000;
     color: black;
+    font-size: 1.25rem;
 }
 
 .homeNavBarLinks a:hover {
