@@ -37,7 +37,6 @@ p {
     text-align: center;
 }
 
-
 .homeNavBar {
     display: flex;
     flex-direction: row;
@@ -49,13 +48,20 @@ p {
     margin-bottom: 3.5rem;
 }
 
+/* Winglet / Icon class */
+.winglet img {
+    width: 175px; /* Default size for large screens, matching your previous HTML attribute */
+    height: auto; /* Maintains aspect ratio */
+    /* You had a hover effect for this image already, keep it */
+}
+
 .homeNavBarLinks {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Keeps the Links inline horizontally */
     list-style-type: none;
-    margin: 10;
+    margin: 0;
     padding: 0;
-    gap: 3rem;
+    gap: 3.5rem;
 }
 
 .homeNavBarLinks a {
@@ -101,17 +107,45 @@ p {
     opacity: 0.5;
 }
 
-/* For media devices */
-/* On screens that are 992px or less, set the background color to blue */
+/* - - - - - For media devices - - - - - */
+/* On screens that are 992px or less - medium screens */
 @media screen and (max-width: 992px) {
-  body {
-    font-size: 16px;
+  .winglet img {
+    width: 150px;    /* Scaling down logo for medium screens */
   }
+  .homeNavBar {
+    max-width: 700px;
+  }
+  .homeNavBar {
+    gap: 1rem;
+  }
+  .homeNavBarLinks {
+    gap: 2.5rem;
+  }
+
 }
 
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-  body {
-    font-size: 12px;
-  }
+
+/* On screens that are 768px or less (mobile) */
+@media screen and (max-width: 768px) {
+    .introHeader {
+        /* Top Right Bottom Left - Spacing Order */
+        margin: 6rem 0rem 2rem 0rem;
+    }
+    .winglet img {
+        width: 150px; /* Scale down logo further for small screens */
+    }
+    .homeNavBar {
+        flex-direction: column;     /* Changes the stacking of logo and links to be vertical */
+        gap: 0.75rem; /* Add vertical gap when stacked */
+        max-width: 90%; /* Allow it to take more width on smaller screens, while still being centered */
+    }
+    .homeNavBarLinks {
+        flex-direction: column;     /* Changes the stacking of logo and links to be vertical */
+        align-items: center;        /* Center the stacked links */
+        gap: 1.25rem;          /* Adjust gap for stacked links */
+    }
+    .homeNavBarLinks a {
+        font-size: 1rem;
+    }
 }
