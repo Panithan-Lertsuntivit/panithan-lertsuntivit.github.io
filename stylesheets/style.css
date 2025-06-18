@@ -45,7 +45,7 @@ p {
     justify-content: space-between; /* Distribution of items with equal spacing between */
     width: 100%;
     max-width: 800px;
-    margin-bottom: 3.5rem;
+    margin-bottom: 0.25rem;
 }
 
 /* Winglet / Icon class */
@@ -55,6 +55,7 @@ p {
     /* You had a hover effect for this image already, keep it */
 }
 
+/* Home Navigation Bar */
 .homeNavBarLinks {
     display: flex;
     flex-direction: row; /* Keeps the Links inline horizontally */
@@ -72,6 +73,42 @@ p {
 }
 
 .homeNavBarLinks a:hover {
+    color: #5992F5;
+}
+
+/* Home Social Bar */
+.homeSocialBar {
+    display: flex; /* Make it a flex container */
+    flex-direction: row;
+    justify-content: center; /* Center the social icons horizontally */
+    /* Top Right Bottom Left - Spacing Order */
+    margin: 0rem 0rem 5rem 0rem;
+    width: 100%; /* Allows it to take full width of its parent (.container) */
+    max-width: 650px; /* Constrain max width for aesthetics if icons get too spread out */
+}
+
+.homeSocialBar ul {
+    display: flex; /* Make the ul a flex container too */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 5rem; /* Space between each social icon */
+    align-items: center; /* Ensure icons are vertically aligned if they have different sizes */
+}
+
+.homeSocialBar li {
+    /* No specific style needed for li, its children (img) will be styled */
+}
+
+/* Set the size and default color on the parent <a> tags */
+.homeSocialBar a {
+    font-size: 48px; /* Sets the size for the icon inside */
+    color: black;   /* Default color for the icon */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Color for the <a> tags (icon will inherit) */
+.homeSocialBar a:hover {
     color: #5992F5;
 }
 
@@ -116,9 +153,6 @@ p {
   .homeNavBar {
     max-width: 700px;
   }
-  .homeNavBar {
-    gap: 1rem;
-  }
   .homeNavBarLinks {
     gap: 2.5rem;
   }
@@ -139,6 +173,7 @@ p {
         flex-direction: column;     /* Changes the stacking of logo and links to be vertical */
         gap: 0.75rem; /* Add vertical gap when stacked */
         max-width: 90%; /* Allow it to take more width on smaller screens, while still being centered */
+        margin-bottom: 1.5rem;
     }
     .homeNavBarLinks {
         flex-direction: column;     /* Changes the stacking of logo and links to be vertical */
