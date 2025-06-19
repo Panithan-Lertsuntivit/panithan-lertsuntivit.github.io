@@ -1,33 +1,123 @@
+/* projects.css */
+
+/* Main Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;    
+    padding: 0 15px;  
+}
+
 .projectsContainer {
+    /* Sizing */
     display: flex;
+    width: 85%;
+    max-width: 1200px;
+
     flex-direction: column;
     padding: 0 2em;
     gap: 2em;
-}
-
-.projectItem {
-    display: flex;
-    flex-direction: row;
-    border: 20px #27489a solid;
-    padding: 1em;
-}
-
-.projectHeader {
-    font-size: 1.33em;
-}
-
-.projectType {
-    color: #27489a;
-}
-
-.projectImg {
-    width: 550px;
-    display: flex;
     align-items: center;
-    /* border: [pattern] [color] [thickness] */
-    border: solid #5992F5 5px;
+
+    margin-bottom: 5rem;
 }
 
-.projectImg img {
-    width: 100%;
+.project-card {
+    /* Card Sizing */
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+
+    /* Color and Style */
+    background-color: #FFFDFC;
+    border: 6px solid #27489a;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Spacing and Margins */
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 30px;
 }
+
+.project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-name {
+    font-size: 1.8em;
+    color: #27489a;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1.1em;
+    color: #303030;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #0070a5;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+}
+
+.project-image-container {
+    width: 300px;
+    height: 300px;
+    /* Updated: Navy blue background for the "canvas" */
+    background-color: #5992F5; /* Navy Blue */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center;     /* Center image vertically */
+    overflow: hidden;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box; /* Include padding in the width/height calculation */
+	
+	border-radius: 10px;
+}
+
+.project-image {
+    /* calc() input should be calc(100% - project-image-container{border-radius}) */
+    max-width: calc(100% - 10px); 
+    max-height: calc(100% - 10px); 
+    object-fit: contain; /* Scales the image down to fit, maintaining aspect ratio */
+    display: block;
+	
+    /* image border-radius should be smaller than image-container border-radius */
+	border-radius: 5px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-image-container {
+        margin-top: 20px;
+        width: 100%;
+        height: 250px;
+    }
+}
+

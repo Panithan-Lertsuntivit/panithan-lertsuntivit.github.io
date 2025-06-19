@@ -4,7 +4,7 @@
 html, body {
     font-family: "Kaisei Tokumin", serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     margin: 0 auto;
     background-color: #FFFDFC;
@@ -35,8 +35,10 @@ p {
     /* Top Right Bottom Left - Spacing Order */
     margin: 7rem 0rem 3.5rem 0rem;
     text-align: center;
+    font-size: 2.5rem;
 }
 
+/* - - - - - - - - - - Home Navigation Bar - - - - - - - - - - */
 .homeNavBar {
     display: flex;
     flex-direction: row;
@@ -61,27 +63,27 @@ p {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    gap: 3.5rem;
+    gap: 4.25rem;
 }
 
 .homeNavBarLinks a {
     text-decoration: none;
     font-weight: 1000;
     color: black;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .homeNavBarLinks a:hover {
     color: #5992F5;
 }
 
-/* Home Social Bar */
+/* - - - - - - - - - - Home Social Bar - - - - - - - - - - */
 .homeSocialBar {
     display: flex; /* Make it a flex container */
     flex-direction: row;
     justify-content: center; /* Center the social icons horizontally */
     /* Top Right Bottom Left - Spacing Order */
-    margin: 0.5rem 0rem 5rem 0rem;
+    margin: 0.75rem 0rem 6rem 0rem;
     width: 100%; /* Allows it to take full width of its parent (.container) */
     max-width: 650px; /* Constrain max width for aesthetics if icons get too spread out */
 }
@@ -91,7 +93,7 @@ p {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    gap: 5rem; /* Space between each social icon */
+    gap: 6rem; /* Space between each social icon */
     align-items: center; /* Ensure icons are vertically aligned if they have different sizes */
 }
 
@@ -102,8 +104,8 @@ p {
 
 /* Set the size and default color on the parent <a> tags */
 .homeSocialBar a .social-icon {
-    width: 2rem; 
-    height: 2rem;
+    width: 2.5rem; 
+    height: 2.5rem;
 }
 
 /* Hover Color for the <a> tags (icon will inherit) */
@@ -111,6 +113,7 @@ p {
     color: #5992F5;
 }
 
+/* - - - - - - - - - - Navigation Bar - - - - - - - - - - */
 .navBar {
     display: flex;
     flex-direction: row;
@@ -131,12 +134,19 @@ p {
     gap: 2em;
 }
 
-.socialLinks img {
-    height: 65px;
+.socialLinks a {
+    color: black; 
+    text-decoration: none; /* Good practice for links */
 }
 
+.socialLinks a .social-icon {
+    width: 3rem; 
+    height: 3rem;
+}
+
+/* Hover Color for the <a> tags (icon will inherit) */
 .socialLinks a:hover {
-    opacity: 0.5;
+    color: #5992F5;
 }
 
 .winglet img:hover {
@@ -153,7 +163,7 @@ p {
     max-width: 700px;
   }
   .homeNavBarLinks {
-    gap: 2.5rem;
+    gap: 3rem;
   }
 
 }
@@ -179,7 +189,7 @@ p {
         gap: 1.25rem;          /* Adjust gap for stacked links */
     }
     .homeNavBarLinks a {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
     .homeSocialBar {
         margin-top: 3rem;
