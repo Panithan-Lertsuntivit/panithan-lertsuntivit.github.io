@@ -7,58 +7,213 @@
     padding: 0 15px;  
 }
 
-.experienceContainer {
+.experience-list {
+    /* Sizing */
     display: flex;
+    width: 85%;
+    max-width: 1200px;
+
     flex-direction: column;
     padding: 0 2em;
     gap: 2em;
+    align-items: center;
+
+    margin-bottom: 5rem;
 }
 
-.experienceItem {
+.experience-card {
+    /* Card Sizing */
     display: flex;
-    flex-direction: row;
-    border: 20px #27489a solid;
-    padding: 1em;
-    gap: 1em;
+    width: 90%;
+    max-width: 1000px;
+
+    /* Color and Style */
+    background-color: #FFFDFC;
+    border: 6px solid #27489a;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Spacing and Margins */
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 30px;
 }
 
-.experienceHeaderText {
-    font-size: 1.33em;
-    margin: 0;
-}
-
-.experienceType {
-    color: #27489a;
-}
-
-.experienceThumbnail {
+.experience-left {
+    /* Sizing */
     display: flex;
+    width: 220px;
+
+    /* Spacing / Layout */
+    flex-shrink: 0; /* Prevent it from shrinking */
     flex-direction: column;
-    width: 500px;
-    gap: 1em;
+    align-items: center; /* Center content within the left column */
+    text-align: center; /* Center text as well */
 }
 
-.experienceInfo {
+.experience-time {
+    /* Font and Color */
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+
+    margin-bottom: 15px; /* Space between years and image */
+    margin-top: 0;
+}
+
+.experience-image-container {
+    /* Sizing and Color */
     display: flex;
+    width: 180px; /* Smaller size for logos/experience images */
+    height: 180px;
+    background-color: #5992F5; /* Navy Blue canvas */
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 10px;
+}
+
+.experience-image {
+    /* calc() input should be calc(100% - experience-image-container{border-radius}) */
+    max-width: calc(100% - 10px); 
+    max-height: calc(100% - 10px); 
+    object-fit: contain; /* Scales the image down to fit, maintaining aspect ratio */
+    display: block;
+	
+    /* image border-radius should be smaller than image-container border-radius */
+	border-radius: 5px;
+}
+
+.experience-right {
+    /* Sizing */
+    display: flex;
+    flex-grow: 1; /* Allow the right section to take up remaining space */
+
     flex-direction: column;
-    gap: 1em;
+    align-items: flex-start; /* Left-justify all content within the right section */
 }
 
-.experienceDate {
-    font-size: 32px;
-    color: #27489a;
+.company-name {
+    /* Font and Color */
+    font-size: 1.75em;
+    color: #0056b3;
+    
+    width: 100%; /* Ensure it takes full width for alignment */
+    margin-top: 0;
+    margin-bottom: 20px; /* Space between company name and first description */
+    text-align: left; /* Explicitly left-justify */
 }
 
-.experienceImg {
-    display: flex;
-    /* border: [pattern] [color] [thickness] */
-    border: solid #5992F5 5px;
+.description-container {
+    margin-bottom: 25px; /* Space between different job descriptions */
+    width: 100%; /* Ensure it takes full width for alignment */
+    text-align: left; /* Explicitly left-justify */
 }
 
-.experienceImg img {
-    width: 100%;
+.description-container:last-child {
+    margin-bottom: 0; /* No margin after the last description in a card */
 }
 
-.positionTitle {
-    color: #27489a;
+.description-title-name {
+    /* Font and Color */
+    font-size: 1.3em;
+    color: #333;
+    font-weight: bold; /* Make title bold as per example */
+
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.description-time {
+    font-size: 0.95em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.description-location-group { 
+    /* For location or group, if applicable */
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+
+.description-points {
+    list-style-type: disc; /* Standard bullet points */
+    margin-left: 20px; /* Indent bullet points */
+    padding-left: 0;
+    color: #555;
+}
+
+.description-points li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .experience-card {
+        flex-direction: column; /* Stack left and right vertically */
+        align-items: center; /* Center content when stacked */
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .experience-left {
+        width: 100%; /* Allow left section to take full width */
+        margin-bottom: 10px; /* Space between left and right sections when stacked */
+    }
+
+    .experience-image-container {
+        width: 150px; /* Adjust size for smaller screens if needed */
+        height: 150px;
+    }
+
+    .experience-years {
+        order: -1; /* Move years to the top when stacked */
+        margin-bottom: 10px;
+    }
+
+    .experience-right {
+        width: 100%; /* Allow right section to take full width */
+    }
+
+    .company-name,
+    .description-container {
+        text-align: center; /* Center titles/descriptions on small screens if desired */
+    }
+
+    .description-points {
+        margin-left: 0; /* Remove indent on small screens if centered */
+        padding-left: 20px; /* Add padding to keep bullets visible */
+        text-align: left; /* Keep bullet points left-justified within their container */
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-list {
+        padding: 1em;
+        gap: 20px;
+    }
+    .experience-card {
+        width: 95%;
+        padding: 10px;
+    }
+    .company-name {
+        font-size: 1.5em;
+    }
+    .description-title-name {
+        font-size: 1.1em;
+    }
 }

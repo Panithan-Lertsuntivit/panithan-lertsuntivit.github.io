@@ -23,7 +23,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1000px; /* Max Width and Margins */
+    max-width: 1400px; /* Max Width and Margins */
     margin-left: auto;
     margin-right: auto;
     padding: 0 1rem;
