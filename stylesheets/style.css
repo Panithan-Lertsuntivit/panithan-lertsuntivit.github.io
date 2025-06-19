@@ -45,7 +45,6 @@ p {
     justify-content: space-between; /* Distribution of items with equal spacing between */
     width: 100%;
     max-width: 800px;
-    margin-bottom: 0.25rem;
 }
 
 /* Winglet / Icon class */
@@ -82,7 +81,7 @@ p {
     flex-direction: row;
     justify-content: center; /* Center the social icons horizontally */
     /* Top Right Bottom Left - Spacing Order */
-    margin: 0rem 0rem 5rem 0rem;
+    margin: 0.5rem 0rem 5rem 0rem;
     width: 100%; /* Allows it to take full width of its parent (.container) */
     max-width: 650px; /* Constrain max width for aesthetics if icons get too spread out */
 }
@@ -96,15 +95,15 @@ p {
     align-items: center; /* Ensure icons are vertically aligned if they have different sizes */
 }
 
-.homeSocialBar li {
-    /* No specific style needed for li, its children (img) will be styled */
+.homeSocialBar a {
+    color: black; 
+    text-decoration: none; /* Good practice for links */
 }
 
 /* Set the size and default color on the parent <a> tags */
-.homeSocialBar a {
-    font-size: 48px; /* Sets the size for the icon inside */
-    color: black;   /* Default color for the icon */
-    transition: color 0.3s ease; /* Smooth transition */
+.homeSocialBar a .social-icon {
+    width: 2rem; 
+    height: 2rem;
 }
 
 /* Hover Color for the <a> tags (icon will inherit) */
@@ -173,7 +172,6 @@ p {
         flex-direction: column;     /* Changes the stacking of logo and links to be vertical */
         gap: 0.75rem; /* Add vertical gap when stacked */
         max-width: 90%; /* Allow it to take more width on smaller screens, while still being centered */
-        margin-bottom: 1.5rem;
     }
     .homeNavBarLinks {
         flex-direction: column;     /* Changes the stacking of logo and links to be vertical */
@@ -183,4 +181,29 @@ p {
     .homeNavBarLinks a {
         font-size: 1rem;
     }
+    .homeSocialBar {
+        margin-top: 3rem;
+    }
+
+    /* Changes for Social Media Icons */
+    .homeSocialBar ul {
+        display: flex;
+        flex-direction: row; /* Keep it a row by default for the first two */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content: center; /* Center items in the row */
+        gap: 3rem; /* Adjust horizontal gap for mobile */
+        row-gap: 1.5rem;
+    }
+    .homeSocialBar ul li {
+        /* Remember to change calc() to reflect the gap value in .homeSocialBar ul {}
+         */
+        flex-basis: calc((100% - 3rem) / 2); /* Roughly 2 icons per row, accounting for gap */
+        max-width: calc((100% - 3rem) / 2); /* Ensures it doesn't grow beyond half */
+        text-align: center; /* Ensures the icon (content of li) is centered within its flex-basis */
+    }
+    /* Pushes Last Item to its own row (if there's an odd amount) */
+    .homeSocialBar ul li:last-child:nth-child(odd) {
+        flex-basis: 100%;
+    }
+   
 }
