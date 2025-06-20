@@ -1,15 +1,103 @@
-.aboutContainer {
-    padding: 0 2em;
-    display: flex;
-    flex-direction: column;
+/* about.css */
+
+/* Main Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;    
+    padding: 0 15px;  
 }
 
 .aboutHeader {
-    margin: 0 auto 1em auto;
+    /* Margin Spacing Order - [Top] [Right] [Bottom] [Left] */
+    margin: 0rem 0rem 3rem 0rem;
+    text-align: center;
+    font-size: 2rem;
 }
 
-.aboutIntro {
+/* About Container */
+.about-container {
+    /* Sizing */
     display: flex;
+    width: 85%;
+    max-width: 1200px;
+
     flex-direction: row;
-    gap: 1em;
+    align-items: center;
+    padding: 30px; /* Internal padding*/
+    gap: 50px; /* Space between the image and the text */
+
+    background-color: #fff; /* White background for the section */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-sizing: border-box; /* Include padding in width calculation */
+
+    /* Spacing and Margin */
+    margin-bottom: 6rem;
+
+}
+
+/* Profile Picture */
+.about-image-wrapper {
+    flex-shrink: 0; /* Prevent the image container from shrinking */
+    width: 300px; /* Fixed width for the image container */
+    height: 300px; /* Fixed height to make it square */
+    border-radius: 50%; /* Make the image container circular */
+    overflow: hidden; /* Hide any parts of the image that go outside the circle */
+    border: 5px solid #007bff; /* Optional: a blue border around the circular image */
+    display: flex; /* Use flex to center the image if it doesn't perfectly fill */
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 100%; /* Make the image fill its circular container */
+    height: 100%;
+    object-fit: cover; /* Crop the image to fill the container while maintaining aspect ratio */
+    display: block; /* Removes extra space below inline images */
+}
+
+/* About Content / Text */
+.about-content {
+    flex-grow: 1; /* Allow the text content to take up the remaining space */
+    text-align: left;
+    line-height: 1.6; /* Improve readability of paragraphs */
+    font-size: 1.1em; /* Slightly larger font size for the main text */
+}
+
+.about-content p {
+    margin-bottom: 1em; /* Space between paragraphs */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+        gap: 30px;
+        padding: 20px;
+        max-width: 90%; /* Allow section to take more width on mobile */
+    }
+
+    .about-image-wrapper {
+        width: 200px; /* Smaller image on mobile */
+        height: 200px;
+    }
+
+    .about-content {
+        text-align: center; /* Center text on mobile for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 15px;
+        gap: 20px;
+    }
+    .about-image-wrapper {
+        width: 150px; /* Even smaller image on very small screens */
+        height: 150px;
+    }
+    .about-content {
+        font-size: 1em; /* Adjust font size if needed */
+    }
 }
