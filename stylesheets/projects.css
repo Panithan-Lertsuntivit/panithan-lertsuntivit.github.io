@@ -48,6 +48,15 @@
     justify-content: space-between;
 }
 
+.project-name-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-name-link:hover {
+    color: #0056b3;
+}
+
 .project-name {
     font-size: 1.75em;
     color: #27489a;

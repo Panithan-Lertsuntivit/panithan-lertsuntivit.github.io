@@ -1,0 +1,375 @@
+/* project-detail.css */
+
+/* General styling for the main content within the container */
+.container {
+    max-width: 1400px; /* Adjust to match your overall site container width */
+    padding: 0 15px;
+    margin-bottom: 5rem;
+}
+
+/* --- Project Hero Card --- */
+.project-hero-card {
+    display: grid;
+    /* Define 2 columns: 1fr for the image column, 1fr for the content column */
+    grid-template-columns: 1fr 1fr;
+    /* Define 4 rows for the layout */
+    grid-template-rows: auto auto auto auto;
+    /* General styling for the card container */
+    background-color: #fff; /* White background for the entire card */
+    border: 3px solid #007bff; /* Example border, adjust as needed */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Internal spacing for the card */
+    gap: 15px; /* Space between grid items */
+
+    width: 85%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+
+/* Hero Image */
+.hero-image-canvas {
+    /* Internal Item .hero-image {} */
+    grid-column: 1 / 2; /* Occupy the first column */
+    grid-row: 1 / 4; /* Span rows 1, 2, and 3 */
+
+    width: 400px;
+    height: 400px;
+
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000080;
+    border-radius: 10px;
+}
+
+.hero-image {
+    max-width: calc(100% - 20px); /* 10px internal padding */
+    max-height: calc(100% - 20px);
+    object-fit: contain; /* Ensure image fits with border */
+    display: block;
+    border-radius: 5px; /* Slightly rounded image itself */
+}
+
+/* Hero Title */
+.hero-project-title {
+    /* Internal Item .project-page-title {} */
+    grid-column: 2 / 3; /* Occupy the second column */
+    grid-row: 1 / 2; /* Occupy the first row */
+    /* Keep existing styling for your project titles */
+
+    display: flex;
+    gap: 5px;
+}
+
+.project-page-title {
+    font-size: 2.5em;
+    color: #0056b3;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Hero Description */
+.hero-project-description {
+    /* Internal Item .project-page-description {} */
+    grid-column: 2 / 3; /* Occupy the second column */
+    grid-row: 2 / 3; /* Occupy the second row */
+    /* Keep existing styling for your project descriptions */
+
+    display: flex;
+    gap: 5px;
+}
+
+.project-page-description {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Hero Tags */
+.hero-project-tags {
+    /* Internal Item .tags {} */
+    grid-column: 2 / 3; /* Occupy the second column */
+    grid-row: 3 / 4; /* Occupy the third row */
+    /* Keep existing styling for your project tags */
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    display: inline-block;
+
+    height: 30px;
+
+    background-color: #e0f7fa;
+    color: #007bb5;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+
+/* Hero Links */
+.hero-links-segment {
+    /* Internal Item .project-external-link {} */
+    grid-column: 1 / 3; /* Span across both columns */
+    grid-row: 4 / 5; /* Occupy the fourth row */
+    /* Keep existing flexbox properties for internal link layout */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.project-external-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Image Card --- */
+.image-card {
+    background-color: #fff;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 800px; /* Max width for image cards */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.image-card .single-image {
+    max-width: 100%; /* Ensure image scales within card */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block; /* Remove extra space below inline images */
+}
+
+.image-card .image-description {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Subsection Card --- */
+.subsection-card {
+    margin: 40px auto 20px auto; /* Space above and below */
+    max-width: 900px;
+    text-align: center;
+}
+
+.subsection-line {
+    border: none;
+    border-top: 2px solid #ccc; /* Horizontal line */
+    margin-bottom: 20px;
+    width: 80%; /* Shorter line */
+}
+
+.subsection-title {
+    font-size: 2em;
+    color: #333;
+    margin: 0;
+}
+
+/* --- Subsection-Image Gallery --- */
+/* New container to hold image cards side-by-side */
+.subsection-image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards within the gallery container */
+    gap: 25px; /* Space between individual cards */
+    max-width: 1000px; /* Max width for the entire gallery block */
+    margin: 30px auto; /* Center the gallery on the page */
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+
+/* --- Subsection-Image Card --- */
+/* Modified to work within the new gallery layout */
+.subsection-image-card {
+    background-color: #fff;
+    border: 3px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    padding: 25px;
+    /* Removed: margin: 30px auto; */
+    /* Removed: max-width: 900px; */
+    box-sizing: border-box;
+    text-align: center; /* Center content within this card */
+
+    /* Flex item sizing: Aim for 3 columns on large screens, wrap as needed */
+    flex: 1 1 calc(33.33% - 17px); /* Approx. 3 cards per row, accounting for gap */
+    min-width: 280px; /* Minimum width before stacking more */
+    max-width: 350px;
+}
+
+.sub-image {
+    width: 100%; /* Make image fill its parent card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Subtle border for each image */
+}
+
+.sub-image-description {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Standard Text Content Section --- */
+.standard-content-section {
+    max-width: 800px; /* Optimal width for reading long paragraphs */
+    margin: 30px auto; /* Centered */
+    padding: 0 15px; /* Internal padding */
+    color: #333;
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+.standard-content-section p {
+    margin-bottom: 1em;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .project-hero-card {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-rows: auto auto auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* Adjustments for hero card segments when stacked */
+    .hero-image-canvas {
+        grid-column: 1 / 2; /* Full width */
+        grid-row: 2 / 3; /* Move below title/description */
+        width: 100%; /* Make image canvas responsive */
+        height: auto; /* Allow height to adjust */
+        max-height: 400px; /* Limit max height */
+    }
+    .hero-project-title {
+        grid-column: 1 / 2; /* Full width */
+        grid-row: 1 / 2; /* Move to top */
+        text-align: center; /* Center content when stacked */
+    }
+    .hero-project-description {
+        grid-column: 1 / 2; /* Full width */
+        grid-row: 3 / 4; /* Move below image if it was 2/3 */
+        text-align: center;
+    }
+    .hero-project-tags {
+        grid-column: 1 / 2; /* Full width */
+        grid-row: 4 / 5; /* Adjusted row */
+        justify-content: center; /* Center tags */
+    }
+    .hero-links-segment {
+        grid-column: 1 / 2; /* Full width */
+        grid-row: 5 / 6; /* Adjusted row */
+    }
+
+    .project-page-title { /* Was project-detail-title */
+        font-size: 2em;
+    }
+
+    /* Responsive for the new image gallery */
+    .subsection-image-gallery {
+        gap: 20px;
+    }
+    .subsection-image-card {
+        flex: 1 1 calc(50% - 10px); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-hero-card,
+    .image-card,
+    .subsection-card,
+    .subsection-image-gallery, /* Apply consistent padding and width to gallery */
+    .standard-content-section {
+        margin-left: 15px;
+        margin-right: 15px;
+        width: auto;
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .project-link-button { /* Now .project-external-link */
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .subsection-title {
+        font-size: 1.8em;
+    }
+
+    /* Responsive for the new image gallery */
+    .subsection-image-gallery {
+        gap: 15px; /* Even smaller gap on tablets/small laptops */
+        padding: 0 10px; /* Reduce padding for smaller viewports */
+    }
+    .subsection-image-card {
+        flex: 1 1 calc(50% - 7.5px); /* Two columns, adjusted for 15px gap */
+        padding: 20px;
+    }
+    .sub-image {
+        max-height: 250px; /* Adjust max height for smaller screens if needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-page-title { /* Was project-detail-title */
+        font-size: 1.8em;
+    }
+    .project-page-description, /* Was project-detail-description */
+    .image-description,
+    .sub-image-description,
+    .standard-content-section p {
+        font-size: 0.95em;
+    }
+
+    /* Responsive for the new image gallery */
+    .subsection-image-gallery {
+        gap: 10px;
+        padding: 0 5px;
+    }
+    .subsection-image-card {
+        flex: 1 1 100%; /* One column on very small screens */
+        max-width: 95%; /* Allow it to take almost full width */
+        margin: 0 auto; /* Center individual cards when stacked */
+        padding: 15px;
+    }
+    .sub-image {
+        max-height: 180px; /* Adjusted max height for very small screens */
+    }
+
+    .hero-links-segment {
+        flex-direction: column; /* Stack buttons */
+    }
+    .project-external-link { /* Was project-link-button */
+        width: 80%;
+        max-width: 250px; /* Limit button width */
+    }
+}
