@@ -153,6 +153,16 @@ p {
     opacity: 0.5;
 }
 
+/* - - - - - - - - - - Footer - - - - - - - - - - */
+footer {
+    text-align: center;   
+    margin-top: 5px;   /* Spacing above footer */
+    padding: 10px;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+}
+
+
 /* - - - - - For media devices - - - - - */
 /* On screens that are 992px or less - medium screens */
 @media screen and (max-width: 992px) {
