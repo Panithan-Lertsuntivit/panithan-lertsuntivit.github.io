@@ -1,6 +1,9 @@
 // scripts/update-date.js
 // Purpose: For date updates for the website
 
+// Automatic copyright year update
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
 // Manually setting the update date
 const lastUpdatedDate = "January 2026";
 

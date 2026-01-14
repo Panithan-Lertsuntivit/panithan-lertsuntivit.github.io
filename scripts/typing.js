@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animation Settings
     const typingSpeed = 60;     // Speed in ms
     const deleteSpeed = 30;
-    const pauseTime = 2000;     // Wait time in ms
+    const pauseTime = 1000;     // Wait time in ms
 
     // Variables
     let charIndex = 0;          // Character index
