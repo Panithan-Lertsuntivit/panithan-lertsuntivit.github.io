@@ -157,6 +157,60 @@ p {
     opacity: 0.5;
 }
 
+/* About Container/Block */
+.about-container {
+    /* Sizing */
+    display: flex;
+    width: 85%;
+    max-width: 1200px;
+
+    flex-direction: row;
+    align-items: center;
+    padding: 30px; /* Internal padding*/
+    gap: 50px; /* Space between the image and the text */
+
+    background-color: #fff; /* White background for the section */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-sizing: border-box; /* Include padding in width calculation */
+
+    /* Spacing and Margin */
+    margin-bottom: 2rem;
+
+}
+
+/* Profile Picture */
+.about-image-wrapper {
+    flex-shrink: 0; /* Prevent the image container from shrinking */
+    width: 300px; /* Fixed width for the image container */
+    height: 300px; /* Fixed height to make it square */
+    border-radius: 50%; /* Make the image container circular */
+    overflow: hidden; /* Hide any parts of the image that go outside the circle */
+    border: 5px solid #007bff; /* Optional: a blue border around the circular image */
+    display: flex; /* Use flex to center the image if it doesn't perfectly fill */
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 100%; /* Make the image fill its circular container */
+    height: 100%;
+    object-fit: cover; /* Crop the image to fill the container while maintaining aspect ratio */
+    display: block; /* Removes extra space below inline images */
+}
+
+/* About Content / Text */
+.about-content {
+    flex-grow: 1; /* Allow the text content to take up the remaining space */
+    text-align: left;
+    line-height: 1.6; /* Improve readability of paragraphs */
+    font-size: 1.1em; /* Slightly larger font size for the main text */
+}
+
+.about-content p {
+    margin-bottom: 1em; /* Space between paragraphs */
+}
+
 /* - - - - - - - - - - Footer - - - - - - - - - - */
 footer {
     text-align: center;   
@@ -164,6 +218,23 @@ footer {
     padding: 10px;
     color: #a0a0a0;
     font-size: 0.75rem;
+}
+
+/* - - - Fade In Animation - - - */
+/* Initial State (Hidden) */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+    visibility: hidden;
+}
+
+/* Visible State (Active) */
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* Return to normal position */
+    visibility: visible;
 }
 
 
@@ -229,65 +300,7 @@ footer {
     .homeSocialBar ul li:last-child:nth-child(odd) {
         flex-basis: 100%;
     }
-   
-}
 
-/* About Container/Block */
-.about-container {
-    /* Sizing */
-    display: flex;
-    width: 85%;
-    max-width: 1200px;
-
-    flex-direction: row;
-    align-items: center;
-    padding: 30px; /* Internal padding*/
-    gap: 50px; /* Space between the image and the text */
-
-    background-color: #fff; /* White background for the section */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    box-sizing: border-box; /* Include padding in width calculation */
-
-    /* Spacing and Margin */
-    margin-bottom: 2rem;
-
-}
-
-/* Profile Picture */
-.about-image-wrapper {
-    flex-shrink: 0; /* Prevent the image container from shrinking */
-    width: 300px; /* Fixed width for the image container */
-    height: 300px; /* Fixed height to make it square */
-    border-radius: 50%; /* Make the image container circular */
-    overflow: hidden; /* Hide any parts of the image that go outside the circle */
-    border: 5px solid #007bff; /* Optional: a blue border around the circular image */
-    display: flex; /* Use flex to center the image if it doesn't perfectly fill */
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-pic {
-    width: 100%; /* Make the image fill its circular container */
-    height: 100%;
-    object-fit: cover; /* Crop the image to fill the container while maintaining aspect ratio */
-    display: block; /* Removes extra space below inline images */
-}
-
-/* About Content / Text */
-.about-content {
-    flex-grow: 1; /* Allow the text content to take up the remaining space */
-    text-align: left;
-    line-height: 1.6; /* Improve readability of paragraphs */
-    font-size: 1.1em; /* Slightly larger font size for the main text */
-}
-
-.about-content p {
-    margin-bottom: 1em; /* Space between paragraphs */
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
     .about-container {
         flex-direction: column; /* Stack image and text vertically on smaller screens */
         align-items: center; /* Center items when stacked */
@@ -304,7 +317,9 @@ footer {
     .about-content {
         text-align: center; /* Center text on mobile for better readability */
     }
+   
 }
+
 
 @media (max-width: 480px) {
     .about-container {
@@ -320,19 +335,3 @@ footer {
     }
 }
 
-/* - - - Fade In Animation - - - */
-/* Initial State (Hidden) */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-
-    visibility: hidden;
-}
-
-/* Visible State (Active) */
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0); /* Return to normal position */
-    visibility: visible;
-}
