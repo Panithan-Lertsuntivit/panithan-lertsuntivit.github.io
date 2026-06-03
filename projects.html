@@ -1,246 +1,213 @@
 <!-- HTML5 Document -->
 <!DOCTYPE html>
-
-<!-- HTML Tag -->
 <html lang="en">
+
 <!-- Head Tag - contains information about website and where you load CSS and JavaScript files -->
-
 <head>
-    <meta charset="utf-8"> <!-- utf-8 is for encoding -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For device rescaling -->
-    <title>Panithan L | Projects</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panithan | Projects</title>
+    
     <!-- Loading CSS and JavaScript Files -->
-    <link rel="stylesheet" href="./stylesheets/style.css">
-    <link rel="stylesheet" href="./stylesheets/projects.css">
-
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/projects.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<!-- Body Tag - main content in webpage (Background is a bit colored) -->
-
+<!-- Body Tag - Main Content in Webpage -->
 <body>
-    <div class="container">
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- - - - - - - - - - - - - - - - - - - - Navigation Bar - - - - - - - - - - - - - - - - - - - --->
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <div class="navBar">
-            <a class="winglet" href="./index.html"><img src="./assets/images/Winglet.png" width="150"></a>
 
-            <ul class="homeNavBarLinks navBarLinks">
-                <li>
-                    <a href="./index.html">Home</a>
-                </li>
-                <li>
-                    <a href="./projects.html">Projects</a>
-                </li>
-                <li>
-                    <a href="./experience.html">Experience</a>
-                </li>
-            </ul>
+    <!-- Navigation Bar -->
+    <div id="navbar-placeholder"></div>
 
-            <div class="socialLinks">
-                <!-- LinkedIn Icon -->
-                <a href="https://www.linkedin.com/in/panithan-lertsuntivit" target="_blank" title="LinkedIn">
-                    <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                        <path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
-                    </svg>
+    <!-- - - - - - Start of Experiences Page - - - - - - -->
+    <main class="main-container">
+        
+        <!-- Thrust Test Rig -->
+        <div class="project-card">
+            <div class="project-content">
+                <a class="project-name-link" href="/project-pages/thrust-test-rig.html">
+                    <h2 class="project-name">
+                        Thrust Test Rig
+                    </h2>
                 </a>
+                <p class="project-description">
+                    Developed and manufactured a propeller thrust test rig for Aerospace SAE at Berkeley.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">
+                        Aerospace SAE
+                    </span>
+                    <span class="tag">
+                        Berkeley Engineering
+                    </span>
+                </div>
+            </div>
+
+            <div class="project-image-container">
+                <img class="project-image" src="/assets/projects/thrust_test_rig.PNG" alt="Thrust Test Rig">
             </div>
         </div>
 
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- - - - - - - - - - - - - - - - - - - Start of Projects - - - - - - - - - - - - - - - - - - - -->
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <div class="projectsContainer">
-            
-            <!-- Thrust Test Rig -->
-            <div class="project-card">
-                <div class="project-content">
-                    <a class="project-name-link" href="./project-pages/thrust-test-rig.html">
-                        <h2 class="project-name">
-                            Thrust Test Rig
-                        </h2>
-                    </a>
-                    <p class="project-description">
-                        Developed and manufactured a propeller thrust test rig for Aerospace SAE at Berkeley.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">
-                            Aerospace SAE
-                        </span>
-                        <span class="tag">
-                            Berkeley Engineering
-                        </span>
-                    </div>
-                </div>
+        <!-- Effects of Filament Dyes on 3D Printed Structures -->
+        <div class="project-card">
+        <div class="project-content">
+            <a class="project-name-link" href="/project-pages/effects-3D-filament-dyes.html">
+                <h2 class="project-name">
+                    Effects of Filament Dyes on 3D Printed Structures
+                </h2>
+            </a>
+            <p class="project-description">
+                Conducted destructive tensile and bending test on 3D printed specimens using an Instron 5500, analyzing data to quantify the mechanical impact of pigment additives in PLA filament.
+            </p>
+            <div class="project-tags">
+                <span class="tag">
+                    Research
+                </span>
+                <span class="tag">
+                    Berkeley Engineering
+                </span>
+            </div>
+        </div>
 
-                <div class="project-image-container">
-                    <img class="project-image" src="./assets/projects/thrust_test_rig.PNG" alt="Thrust Test Rig">
+            <div class="project-image-container">
+                <img class="project-image" src="/assets/projects/Effect of Filament Dyes.png" alt="Colored DogBones">
+            </div>
+        </div>
+
+        <!-- Real-Time Plotter -->
+        <div class="project-card">
+            <div class="project-content">
+                <a class="project-name-link" href="/project-pages/real-time-plotter.html">
+                    <h2 class="project-name">
+                        Real-Time Plotter
+                    </h2>
+                </a>
+                <p class="project-description">
+                    Developed a Wi-Fi-enabled plotting system utilizing LabVIEW for telemetry and an ESP32 for low-level stepper motor control via TCP/IP protocols.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">
+                        Project
+                    </span>
+                    <span class="tag">
+                        Berkeley Engineering
+                    </span>
                 </div>
             </div>
 
-            <!-- Effects of Filament Dyes on 3D Printed Structures -->
-            <div class="project-card">
-                <div class="project-content">
-                    <a class="project-name-link" href="./project-pages/effects-3D-filament-dyes.html">
-                        <h2 class="project-name">
-                            Effects of Filament Dyes on 3D Printed Structures
-                        </h2>
-                    </a>
-                    <p class="project-description">
-                        Conducted destructive tensile and bending test on 3D printed specimens using an Instron 5500, analyzing data to quantify the mechanical impact of pigment additives in PLA filament.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">
-                            Research
-                        </span>
-                        <span class="tag">
-                            Berkeley Engineering
-                        </span>
-                    </div>
-                </div>
-
-                <div class="project-image-container">
-                    <img class="project-image" src="./assets/projects/Effect of Filament Dyes.png" alt="Colored DogBones">
-                </div>
+            <div class="project-image-container">
+                <img class="project-image" src="/assets/projects/Real-Time Plotter.png" alt="Real-Time Plotter">
             </div>
-
-            <!-- Real-Time Plotter -->
-            <div class="project-card">
-                <div class="project-content">
-                    <a class="project-name-link" href="./project-pages/real-time-plotter.html">
-                        <h2 class="project-name">
-                            Real-Time Plotter
-                        </h2>
-                    </a>
-                    <p class="project-description">
-                        Developed a Wi-Fi-enabled plotting system utilizing LabVIEW for telemetry and an ESP32 for low-level stepper motor control via TCP/IP protocols.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">
-                            Project
-                        </span>
-                        <span class="tag">
-                            Berkeley Engineering
-                        </span>
-                    </div>
-                </div>
-
-                <div class="project-image-container">
-                    <img class="project-image" src="./assets/projects/Real-Time Plotter.png" alt="Real-Time Plotter">
-                </div>
-            </div>
+        </div>
 
             
-            <!-- Mobile Desk -->
-            <div class="project-card">
-                <div class="project-content">
-                    <a class="project-name-link" href="./project-pages/mobile-desk.html">
-                        <h2 class="project-name">
-                            Mobile Desk
-                        </h2>
-                    </a>
-                    <p class="project-description">
-                        Designed and manufactured a portable workstation conforming to ASME Y14.5M GD&T standards; fabricated aluminum components using manual machining to +/- 0.001" tolerances.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">
-                            Project
-                        </span>
-                        <span class="tag">
-                            Berkeley Engineering
-                        </span>
-                    </div>
-                </div>
-
-                <div class="project-image-container">
-                    <img class="project-image" src="./assets/projects/Mobile Desk.png" alt="Mobile Desk">
+        <!-- Mobile Desk -->
+        <div class="project-card">
+            <div class="project-content">
+                <a class="project-name-link" href="/project-pages/mobile-desk.html">
+                    <h2 class="project-name">
+                        Mobile Desk
+                    </h2>
+                </a>
+                <p class="project-description">
+                    Designed and manufactured a portable workstation conforming to ASME Y14.5M GD&T standards; fabricated aluminum components using manual machining to +/- 0.001" tolerances.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">
+                        Project
+                    </span>
+                    <span class="tag">
+                        Berkeley Engineering
+                    </span>
                 </div>
             </div>
 
-            <!-- Dark Star Modeling -->
-            <div class="project-card">
-                <div class="project-content">
-                    <a class="project-name-link" href="./project-pages/dark-star-modeling.html">
-                        <h2 class="project-name">
-                            Dark Star Modeling
-                        </h2>
-                    </a>
-                    <p class="project-description">
-                        Developed a Python simulation to numerically solve the Tolman-Oppenheimer-Volkoff equations and model Dark Matter self-interactions for presentation at the 2023 UCI Building Bridges Conference.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">
-                            Research
-                        </span>
-                        <span class="tag">
-                            Irvine Valley College
-                        </span>
-                    </div>
-                </div>
+            <div class="project-image-container">
+                <img class="project-image" src="/assets/projects/Mobile Desk.png" alt="Mobile Desk">
+            </div>
+        </div>
 
-                <div class="project-image-container">
-                    <img class="project-image" src="./assets/projects/Dark Star Mass Radii Graph.png" alt="Dark Star Graph">
+        <!-- Dark Star Modeling -->
+        <div class="project-card">
+            <div class="project-content">
+                <a class="project-name-link" href="/project-pages/dark-star-modeling.html">
+                    <h2 class="project-name">
+                        Dark Star Modeling
+                    </h2>
+                </a>
+                <p class="project-description">
+                    Developed a Python simulation to numerically solve the Tolman-Oppenheimer-Volkoff equations and model Dark Matter self-interactions for presentation at the 2023 UCI Building Bridges Conference.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">
+                        Research
+                    </span>
+                    <span class="tag">
+                        Irvine Valley College
+                    </span>
                 </div>
             </div>
 
-            <!-- Wall Climbing Vehicle -->
-            <div class="project-card">
-                <div class="project-content">
-                    <a class="project-name-link" href="./project-pages/wall-climbing-vehicle.html">
-                        <h2 class="project-name">
-                            Wall Climbing Vehicle
-                        </h2>
-                    </a>
-                    <p class="project-description">
-                        Designed a suction-based rover using SolidWorks, utilizing laser-cut living hinges to achieve complex flexible geometries for rapid chassis prototyping.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">
-                            Project
-                        </span>
-                        <span class="tag">
-                            Irvine Valley College
-                        </span>
-                    </div>
-                </div>
+            <div class="project-image-container">
+                <img class="project-image" src="/assets/projects/Dark Star Mass Radii Graph.png" alt="Dark Star Graph">
+            </div>
+        </div>
 
-                <div class="project-image-container">
-                    <img class="project-image" src="./assets/projects/Wall Climbing Vehicle.png" alt="Wall Climbing Vehicle">
+        <!-- Wall Climbing Vehicle -->
+        <div class="project-card">
+            <div class="project-content">
+                <a class="project-name-link" href="/project-pages/wall-climbing-vehicle.html">
+                    <h2 class="project-name">
+                        Wall Climbing Vehicle
+                    </h2>
+                </a>
+                <p class="project-description">
+                    Designed a suction-based rover using SolidWorks, utilizing laser-cut living hinges to achieve complex flexible geometries for rapid chassis prototyping.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">
+                        Project
+                    </span>
+                    <span class="tag">
+                        Irvine Valley College
+                    </span>
                 </div>
             </div>
 
-            <!-- Downwind Vehicle -->
-            <div class="project-card">
-                <div class="project-content">
-                    <a class="project-name-link" href="./project-pages/down-wind-vehicle.html">
-                        <h2 class="project-name">
-                            Downwind Vehicle
-                        </h2>
-                    </a>
-                    <p class="project-description">
-                        Redesigned and optimized Derek Muller's Downwind Faster than the Wind vehicle. 
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">
-                            Project
-                        </span>
-                        <span class="tag">
-                            Irvine Valley College
-                        </span>
-                    </div>
-                </div>
+            <div class="project-image-container">
+                <img class="project-image" src="/assets/projects/Wall Climbing Vehicle.png" alt="Wall Climbing Vehicle">
+            </div>
+        </div>
 
-                <div class="project-image-container">
-                    <img class="project-image" src="./assets/projects/Downwind Vehicle.png" alt="Downwind Vehicle">
+        <!-- Downwind Vehicle -->
+        <div class="project-card">
+            <div class="project-content">
+                <a class="project-name-link" href="/project-pages/down-wind-vehicle.html">
+                    <h2 class="project-name">
+                        Downwind Vehicle
+                    </h2>
+                </a>
+                <p class="project-description">
+                    Redesigned and optimized Derek Muller's Downwind Faster than the Wind vehicle. 
+                </p>
+                <div class="project-tags">
+                    <span class="tag">
+                        Project
+                    </span>
+                    <span class="tag">
+                        Irvine Valley College
+                    </span>
                 </div>
             </div>
 
-
+            <div class="project-image-container">
+                <img class="project-image" src="/assets/projects/Downwind Vehicle.png" alt="Downwind Vehicle">
+            </div>
         </div>
         
-    </div>
+    </main>
 
     <footer>
         <p>
@@ -252,10 +219,20 @@
         </p>
     </footer>
 
-    <script src="./scripts/update-date.js"></script>
-
-
+    <!-- Javascript Files -->
+    <script src="/scripts/curtain-menu.js"></script>
+    <script src="/scripts/update-date.js"></script>
+    <script src="/scripts/typing.js"></script>
+    <script src="/scripts/fade-in.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch navbar component and replace the placeholder tag
+            $.get("/navbar.html", function(data) {
+                $("#navbar-placeholder").replaceWith(data);
+            });
+        });
+    </script>
+    <!-- Data throttling issue for navigation bar at low speeds -->
 
 </body>
-
 </html>

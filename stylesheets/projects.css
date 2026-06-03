@@ -1,26 +1,5 @@
 /* projects.css */
 
-/* Main Container */
-.container {
-    max-width: 1400px;
-    margin: 0 auto;    
-    padding: 0 15px;  
-}
-
-.projectsContainer {
-    /* Sizing */
-    display: flex;
-    width: 85%;
-    max-width: 1200px;
-
-    flex-direction: column;
-    padding: 0 2em;
-    gap: 2em;
-    align-items: center;
-
-    margin-bottom: 1rem;
-}
-
 .project-card {
     /* Card Sizing */
     display: flex;
@@ -29,12 +8,12 @@
 
     /* Color and Style */
     background-color: #FFFDFC;
-    border: 6px solid #27489a;
+    border: 5px solid #27489a;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     
     /* Spacing and Margins */
-    margin-bottom: 20px;
+    margin: 0 auto 2rem auto;    
     padding: 20px;
     box-sizing: border-box;
     align-items: center;
@@ -58,38 +37,42 @@
 }
 
 .project-name {
-    font-size: 1.75em;
+    font-size: 1.5em;
     color: #27489a;
     margin-top: 0;
     margin-bottom: 10px;
 }
 
 .project-description {
-    font-size: 1.1em;
     color: #303030;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
+/* Tag Styling */
 .project-tags {
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+    align-self: center;
 }
 
+/* Individual Skill Badges */
 .tag {
-    display: inline-block;
-    background-color: #e0f7fa;
-    color: #0070a5;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.9em;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    white-space: nowrap;
+    background-color: #f0f3ff; /* Light accent matching your navbar border tint */
+    color: #27489a;            /* Dark brand blue */
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #c2ccf5;
+    transition: all 0.2s ease;
 }
 
 .project-image-container {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     /* Updated: Navy blue background for the "canvas" */
     background-color: #5992F5; /* Navy Blue */
     display: flex;
@@ -107,8 +90,8 @@
 
 .project-image {
     /* calc() input should be calc(100% - project-image-container{border-radius}) */
-    max-width: calc(100% - 10px); 
-    max-height: calc(100% - 10px); 
+    max-width: calc(100% - 8px); 
+    max-height: calc(100% - 8px); 
     object-fit: contain; /* Scales the image down to fit, maintaining aspect ratio */
     display: block;
 	
@@ -117,16 +100,20 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .project-card {
         flex-direction: column;
         align-items: flex-start;
     }
 
     .project-image-container {
-        margin-top: 20px;
-        width: 100%;
-        height: 250px;
+        width: 120px;
+        height: 120px; 
+        margin: 0 auto 0 auto;
+    }
+
+    .project-tags {
+        justify-content: center;
     }
 }
 
