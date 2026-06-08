@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
     <link rel="stylesheet" href="/stylesheets/experience.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <!-- Body Tag - Main Content in Webpage -->
@@ -30,10 +29,10 @@
     <main class="main-container">
         
         <!-- UC Berkeley - Teaching Assistant -->
-        <div class="experience-card" title="UC Berkeley Department of Mechanical Engineering">
+        <div class="experience-card fade-in-section" title="UC Berkeley Department of Mechanical Engineering">
 
             <div class="experience-image-container">
-                <img class="experience-image" src="/assets/images/BerkeleyEngineering.png" alt="Berkeley Engineering">
+                <img class="experience-image" src="/assets/images/BerkeleyEngineering.webp" alt="Berkeley Engineering" loading="lazy">
             </div>
 
             <div class="experience-rightside">
@@ -83,10 +82,10 @@
         </div>
          
         <!-- Aerospace SAE at Berkeley -->
-        <div class="experience-card" title="Aerospace SAE at Berkeley">
+        <div class="experience-card fade-in-section" title="Aerospace SAE at Berkeley">
 
             <div class="experience-image-container">
-                <img class="experience-image" src="/assets/images/AEROSAE.png" alt="AERO SAE">
+                <img class="experience-image" src="/assets/images/AEROSAE.webp" alt="AERO SAE" loading="lazy">
             </div>
 
             <div class="experience-rightside">
@@ -134,10 +133,10 @@
         </div>
 
         <!-- NTHU - Research Intern -->
-        <div class="experience-card" title="National Tsing Hua University">
+        <div class="experience-card fade-in-section" title="National Tsing Hua University">
 
             <div class="experience-image-container">
-                <img class="experience-image" src="/assets/images/NTHU.png" alt="National Tsing Hua University">
+                <img class="experience-image" src="/assets/images/NTHU.webp" alt="National Tsing Hua University" loading="lazy">
             </div>
 
             <div class="experience-rightside">
@@ -168,10 +167,10 @@
 
 
         <!-- Irvine Valley College - Student Tutor -->
-        <div class="experience-card" title="Irvine Valley College">
+        <div class="experience-card fade-in-section" title="Irvine Valley College">
 
             <div class="experience-image-container">
-                <img class="experience-image" src="/assets/images/IrvineValleyCollege.png" alt="Irvine Valley College">
+                <img class="experience-image" src="/assets/images/IrvineValleyCollege.webp" alt="Irvine Valley College" loading="lazy">
             </div>
 
             <div class="experience-rightside">
@@ -215,14 +214,24 @@
     <script src="/scripts/typing.js"></script>
     <script src="/scripts/fade-in.js"></script>
     <script>
-        $(document).ready(function() {
-            // Fetch navbar component and replace the placeholder tag
-            $.get("/navbar.html", function(data) {
-                $("#navbar-placeholder").replaceWith(data);
-            });
+        // Native Vanilla JS fetch
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/navbar.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Navbar network response failed");
+                    return response.text();
+                })
+                .then(data => {
+                    const placeholder = document.getElementById("navbar-placeholder");
+                    if (placeholder) {
+                        // Safely injects the HTML right after the placeholder
+                        placeholder.insertAdjacentHTML("afterend", data);
+                        // Removes the empty placeholder div to keep the DOM clean
+                        placeholder.remove();
+                    }
+                })
+                .catch(error => console.error("Error loading navbar:", error));
         });
     </script>
-    <!-- Data throttling issue for navigation bar at low speeds -->
-
 </body>
 </html>

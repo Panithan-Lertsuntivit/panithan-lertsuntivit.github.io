@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
     <link rel="stylesheet" href="/stylesheets/projects.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <!-- Body Tag - Main Content in Webpage -->
@@ -25,7 +24,7 @@
     <main class="main-container">
         
         <!-- Thrust Test Rig -->
-        <div class="project-card">
+        <div class="project-card fade-in-section">
             <div class="project-content">
                 <a class="project-name-link" href="/project-pages/thrust-test-rig.html">
                     <h2 class="project-name">
@@ -46,12 +45,12 @@
             </div>
 
             <div class="project-image-container">
-                <img class="project-image" src="/assets/projects/thrust_test_rig.PNG" alt="Thrust Test Rig">
+                <img class="project-image" src="/assets/projects/thrust_test_rig.webp" alt="Thrust Test Rig" loading="lazy">
             </div>
         </div>
 
         <!-- Effects of Filament Dyes on 3D Printed Structures -->
-        <div class="project-card">
+        <div class="project-card fade-in-section">
         <div class="project-content">
             <a class="project-name-link" href="/project-pages/effects-3D-filament-dyes.html">
                 <h2 class="project-name">
@@ -72,12 +71,12 @@
         </div>
 
             <div class="project-image-container">
-                <img class="project-image" src="/assets/projects/Effect of Filament Dyes.png" alt="Colored DogBones">
+                <img class="project-image" src="/assets/projects/Effect of Filament Dyes.webp" alt="Colored DogBones" loading="lazy">
             </div>
         </div>
 
         <!-- Real-Time Plotter -->
-        <div class="project-card">
+        <div class="project-card fade-in-section">
             <div class="project-content">
                 <a class="project-name-link" href="/project-pages/real-time-plotter.html">
                     <h2 class="project-name">
@@ -98,13 +97,13 @@
             </div>
 
             <div class="project-image-container">
-                <img class="project-image" src="/assets/projects/Real-Time Plotter.png" alt="Real-Time Plotter">
+                <img class="project-image" src="/assets/projects/Real-Time Plotter.webp" alt="Real-Time Plotter" loading="lazy">
             </div>
         </div>
 
             
         <!-- Mobile Desk -->
-        <div class="project-card">
+        <div class="project-card fade-in-section">
             <div class="project-content">
                 <a class="project-name-link" href="/project-pages/mobile-desk.html">
                     <h2 class="project-name">
@@ -125,12 +124,12 @@
             </div>
 
             <div class="project-image-container">
-                <img class="project-image" src="/assets/projects/Mobile Desk.png" alt="Mobile Desk">
+                <img class="project-image" src="/assets/projects/Mobile Desk.webp" alt="Mobile Desk" loading="lazy">
             </div>
         </div>
 
         <!-- Dark Star Modeling -->
-        <div class="project-card">
+        <div class="project-card fade-in-section">
             <div class="project-content">
                 <a class="project-name-link" href="/project-pages/dark-star-modeling.html">
                     <h2 class="project-name">
@@ -151,12 +150,12 @@
             </div>
 
             <div class="project-image-container">
-                <img class="project-image" src="/assets/projects/Dark Star Mass Radii Graph.png" alt="Dark Star Graph">
+                <img class="project-image" src="/assets/projects/Dark Star Mass Radii Graph.webp" alt="Dark Star Graph" loading="lazy">
             </div>
         </div>
 
         <!-- Wall Climbing Vehicle -->
-        <div class="project-card">
+        <div class="project-card fade-in-section">
             <div class="project-content">
                 <a class="project-name-link" href="/project-pages/wall-climbing-vehicle.html">
                     <h2 class="project-name">
@@ -177,12 +176,12 @@
             </div>
 
             <div class="project-image-container">
-                <img class="project-image" src="/assets/projects/Wall Climbing Vehicle.png" alt="Wall Climbing Vehicle">
+                <img class="project-image" src="/assets/projects/Wall Climbing Vehicle.webp" alt="Wall Climbing Vehicle" loading="lazy">
             </div>
         </div>
 
         <!-- Downwind Vehicle -->
-        <div class="project-card">
+        <div class="project-card fade-in-section">
             <div class="project-content">
                 <a class="project-name-link" href="/project-pages/down-wind-vehicle.html">
                     <h2 class="project-name">
@@ -203,7 +202,7 @@
             </div>
 
             <div class="project-image-container">
-                <img class="project-image" src="/assets/projects/Downwind Vehicle.png" alt="Downwind Vehicle">
+                <img class="project-image" src="/assets/projects/Downwind Vehicle.webp" alt="Downwind Vehicle" loading="lazy">
             </div>
         </div>
         
@@ -225,14 +224,24 @@
     <script src="/scripts/typing.js"></script>
     <script src="/scripts/fade-in.js"></script>
     <script>
-        $(document).ready(function() {
-            // Fetch navbar component and replace the placeholder tag
-            $.get("/navbar.html", function(data) {
-                $("#navbar-placeholder").replaceWith(data);
-            });
+        // Native Vanilla JS fetch
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/navbar.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Navbar network response failed");
+                    return response.text();
+                })
+                .then(data => {
+                    const placeholder = document.getElementById("navbar-placeholder");
+                    if (placeholder) {
+                        // Safely injects the HTML right after the placeholder
+                        placeholder.insertAdjacentHTML("afterend", data);
+                        // Removes the empty placeholder div to keep the DOM clean
+                        placeholder.remove();
+                    }
+                })
+                .catch(error => console.error("Error loading navbar:", error));
         });
     </script>
-    <!-- Data throttling issue for navigation bar at low speeds -->
-
 </body>
 </html>

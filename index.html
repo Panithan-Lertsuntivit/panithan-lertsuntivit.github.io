@@ -11,7 +11,6 @@
     <!-- Loading CSS and JavaScript Files -->
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <!-- Body Tag - Main Content in Webpage -->
@@ -31,7 +30,8 @@
         <div class="about-container fade-in-section">
             <!-- Profile Picture -->
             <div class="about-image-wrapper">
-                <img class="profile-pic" src="/assets/images/Profile.png" alt="Panithan Lertsuntivit">
+                <img class="profile-pic" src="/assets/images/Profile.webp" alt="Panithan Lertsuntivit"
+                    width="1000" height="1000">
             </div>
             
             <!-- About Text -->
@@ -79,14 +79,24 @@
     <script src="/scripts/typing.js"></script>
     <script src="/scripts/fade-in.js"></script>
     <script>
-        $(document).ready(function() {
-            // Fetch navbar component and replace the placeholder tag
-            $.get("/navbar.html", function(data) {
-                $("#navbar-placeholder").replaceWith(data);
-            });
+        // Native Vanilla JS fetch
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/navbar.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Navbar network response failed");
+                    return response.text();
+                })
+                .then(data => {
+                    const placeholder = document.getElementById("navbar-placeholder");
+                    if (placeholder) {
+                        // Safely injects the HTML right after the placeholder
+                        placeholder.insertAdjacentHTML("afterend", data);
+                        // Removes the empty placeholder div to keep the DOM clean
+                        placeholder.remove();
+                    }
+                })
+                .catch(error => console.error("Error loading navbar:", error));
         });
     </script>
-    <!-- Data throttling issue for navigation bar at low speeds -->
-
 </body>
 </html>

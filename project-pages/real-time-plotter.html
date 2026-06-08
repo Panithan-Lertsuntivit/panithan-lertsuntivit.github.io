@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
     <link rel="stylesheet" href="/stylesheets/project-detail.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <!-- Body Tag - Main Content in Webpage -->
@@ -30,7 +29,7 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div class="project-hero-card">
             <div class="hero-image-canvas">
-                <img class="hero-image" src="/assets/projects/Real-Time Plotter.png" alt="Colored Dog Bones">
+                <img class="hero-image" src="/assets/projects/Real-Time Plotter.webp" alt="Colored Dog Bones" loading="lazy">
             </div>
 
             <div class="hero-project-title">
@@ -66,14 +65,14 @@
         <!-- - - - - - - - - - - - - - - - - - - - Image Cards - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div class="image-card">
-            <img class="single-image" src="/assets/projects/real-time-plotter/LabVIEW Interface.png" alt="LabVIEW Interface">
+            <img class="single-image" src="/assets/projects/real-time-plotter/LabVIEW Interface.webp" alt="LabVIEW Interface" loading="lazy">
             <p class="image-description">
                 LabVIEW Graphical User Interface
             </p>
         </div>
 
         <div class="image-card">
-            <img class="single-image" src="/assets/projects/real-time-plotter/Plotter Prototype.png" alt="Plotter Prototype">
+            <img class="single-image" src="/assets/projects/real-time-plotter/Plotter Prototype.webp" alt="Plotter Prototype" loading="lazy">
             <p class="image-description">
                 Plotter Prototype
             </p>
@@ -97,14 +96,25 @@
     <script src="/scripts/typing.js"></script>
     <script src="/scripts/fade-in.js"></script>
     <script>
-        $(document).ready(function() {
-            // Fetch navbar component and replace the placeholder tag
-            $.get("/navbar.html", function(data) {
-                $("#navbar-placeholder").replaceWith(data);
-            });
+        // Native Vanilla JS fetch
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/navbar.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Navbar network response failed");
+                    return response.text();
+                })
+                .then(data => {
+                    const placeholder = document.getElementById("navbar-placeholder");
+                    if (placeholder) {
+                        // Safely injects the HTML right after the placeholder
+                        placeholder.insertAdjacentHTML("afterend", data);
+                        // Removes the empty placeholder div to keep the DOM clean
+                        placeholder.remove();
+                    }
+                })
+                .catch(error => console.error("Error loading navbar:", error));
+
         });
     </script>
-    <!-- Data throttling issue for navigation bar at low speeds -->
-
 </body>
 </html>

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
     <link rel="stylesheet" href="/stylesheets/project-detail.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <!-- Body Tag - Main Content in Webpage -->
@@ -30,7 +29,7 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div class="project-hero-card">
             <div class="hero-image-canvas">
-                <img class="hero-image" src="/assets/projects/thrust_test_rig.PNG" alt="Thrust Test Rig Main Image">
+                <img class="hero-image" src="/assets/projects/thrust_test_rig.webp" alt="Thrust Test Rig Main Image" loading="lazy">
             </div>
 
             <div class="hero-project-title">
@@ -67,7 +66,7 @@
         <!-- - - - - - - - - - - - - - - - - - - - Image Card - - - - - - - - - - - - - - - - - - - - - -->
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div class="image-card">
-            <img class="single-image" src="/assets/projects/thrust-test-rig/Wind Tunnel Testing.jpg" alt="Wind Tunnel Testing">
+            <img class="single-image" src="/assets/projects/thrust-test-rig/Wind Tunnel Testing.webp" alt="Wind Tunnel Testing" loading="lazy">
             <p class="image-description">
                 Dynamic airflow thrust testing using the AEROLAB wind tunnel in Hesse Hall.
             </p>
@@ -75,7 +74,7 @@
 
         <!-- Another Image Card (example of repetition) -->
         <div class="image-card">
-            <img class="single-image" src="/assets/projects/thrust-test-rig/Static Airflow Testing.jpg" alt="Static Airflow Testing">
+            <img class="single-image" src="/assets/projects/thrust-test-rig/Static Airflow Testing.webp" alt="Static Airflow Testing" loading="lazy">
             <p class="image-description">
                 Static airflow thrust testing in Hesse Hall.
             </p>
@@ -96,35 +95,35 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div class="subsection-image-gallery">
             <div class="subsection-image-card">
-                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Starting End Mill Passes.png" alt="Starting End Mill Passes">
+                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Starting End Mill Passes.webp" alt="Starting End Mill Passes" loading="lazy">
                 <p class="sub-image-description">
                     Starting End Mill Passes
                 </p>
             </div>
 
             <div class="subsection-image-card">
-                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Chamfering M12 Hole.png" alt="Chamfering M12 Hole">
+                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Chamfering M12 Hole.webp" alt="Chamfering M12 Hole" loading="lazy">
                 <p class="sub-image-description">
                     Chamfering the M12 Clearance Hole
                 </p>
             </div>
 
             <div class="subsection-image-card">
-                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Drilling Mounting Holes.png" alt="Drilling Mounting Holes">
+                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Drilling Mounting Holes.webp" alt="Drilling Mounting Holes" loading="lazy">
                 <p class="sub-image-description">
                     Drilling Side Mounting Holes
                 </p>
             </div>
 
             <div class="subsection-image-card">
-                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Tapping M5 Threads.png" alt="Tapping M5 Threads">
+                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Tapping M5 Threads.webp" alt="Tapping M5 Threads" loading="lazy">
                 <p class="sub-image-description">
                     Tapping M5 Threads
                 </p>
             </div>
 
             <div class="subsection-image-card">
-                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Finished Frame Mount.png" alt="Finished Part">
+                <img class="sub-image" src="/assets/projects/thrust-test-rig/Load Cell Frame Mount Manufacturing/Finished Frame Mount.webp" alt="Finished Part" loading="lazy">
                 <p class="sub-image-description">
                     Finished Part
                 </p>
@@ -149,14 +148,24 @@
     <script src="/scripts/typing.js"></script>
     <script src="/scripts/fade-in.js"></script>
     <script>
-        $(document).ready(function() {
-            // Fetch navbar component and replace the placeholder tag
-            $.get("/navbar.html", function(data) {
-                $("#navbar-placeholder").replaceWith(data);
-            });
+        // Native Vanilla JS fetch
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/navbar.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Navbar network response failed");
+                    return response.text();
+                })
+                .then(data => {
+                    const placeholder = document.getElementById("navbar-placeholder");
+                    if (placeholder) {
+                        // Safely injects the HTML right after the placeholder
+                        placeholder.insertAdjacentHTML("afterend", data);
+                        // Removes the empty placeholder div to keep the DOM clean
+                        placeholder.remove();
+                    }
+                })
+                .catch(error => console.error("Error loading navbar:", error));
         });
     </script>
-    <!-- Data throttling issue for navigation bar at low speeds -->
-
 </body>
 </html>
