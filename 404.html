@@ -1,0 +1,122 @@
+<!-- HTML5 Document -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head Tag - contains information about website and where you load CSS and JavaScript files -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error | Panithan Lertsuntivit</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/Winglet.svg">
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Loading CSS and JavaScript Files -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+
+    <!-- Additional CSS for 404 Error Page -->
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 75vh;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .error-code {
+            font-size: 7rem;
+            font-weight: bold;
+            color: #5992F5; /* Matches your active element accent blue */
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 2px;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            color: #333333;
+            margin: 15px 0 20px 0;
+        }
+        
+        .error-message {
+            font-size: 1.15rem;
+            color: #666666;
+            max-width: 450px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #5992F5;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #4078d6;
+            transform: translateY(-2px); /* Subtle hover lift */
+        }
+    </style>
+</head>
+
+<!-- Body Tag - Main Content in Webpage -->
+<body>
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="error-container">
+        <h1 class="error-code">404 Error</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-message">The page you are looking for has either been moved or does not exist.</p>
+        <a href="/index.html" class="back-button">Return to Home</a>
+    </main>
+
+    <footer>
+        <p>
+        <small>
+            &copy; <span id="copyright-year"></span> Panithan Lertsuntivit. 
+
+            Last updated <span id="last-updated"></span>.
+        </small>
+        </p>
+    </footer>
+
+    <!-- Javascript Files -->
+    <script src="/scripts/curtain-menu.js"></script>
+    <script src="/scripts/update-date.js"></script>
+    <script src="/scripts/typing.js"></script>
+    <script src="/scripts/fade-in.js"></script>
+    <script>
+        // Native Vanilla JS fetch
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/navbar.html")
+                .then(response => {
+                    if (!response.ok) throw new Error("Navbar network response failed");
+                    return response.text();
+                })
+                .then(data => {
+                    const placeholder = document.getElementById("navbar-placeholder");
+                    if (placeholder) {
+                        // Safely injects the HTML right after the placeholder
+                        placeholder.insertAdjacentHTML("afterend", data);
+                        // Removes the empty placeholder div to keep the DOM clean
+                        placeholder.remove();
+                    }
+                })
+                .catch(error => console.error("Error loading navbar:", error));
+        });
+    </script>
+
+</body>
+</html>
