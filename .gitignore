@@ -1,0 +1,31 @@
+# ==========================================================================
+# IDEs and Editors
+# ==========================================================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# ==========================================================================
+# Operating System Junk Files
+# ==========================================================================
+# Windows thumbnail databases and desktop configuration files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS index and folder layout files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ==========================================================================
+# Local Environment & Logs
+# ==========================================================================
+*.log
+.env
+.env.local
