@@ -18,6 +18,13 @@
     box-sizing: border-box;
     align-items: center;
     gap: 30px;
+
+    text-decoration: none; 
+    color: inherit;
+}
+
+.project-card:hover {
+    transform: scale(1.01);
 }
 
 .project-content {

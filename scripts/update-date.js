@@ -8,7 +8,7 @@ if (copyrightEl) {
 }
 
 // Manually setting the update date
-const lastUpdatedDate = "June 2026";
+const lastUpdatedDate = "July 2026";
 
 // Code finds the 'last-updated' span and inserts the date safely
 const lastUpdatedEl = document.getElementById('last-updated');
