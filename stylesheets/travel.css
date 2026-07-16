@@ -1,0 +1,114 @@
+/* travel.css */
+
+/* --- Randomized Highlights Section --- */
+.highlights-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.highlight-card {
+    background-color: #FFFDFC;
+    border: 3px solid #b3c2e6; /* Light blue border mimicking your mockup */
+    border-radius: 20px;
+    padding: 15px;
+    width: 280px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-image {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Forces the perfect 4:3 shape */
+    object-fit: cover;   /* Crops elegantly to fit */
+    border-radius: 12px; /* Slight rounding on the image itself */
+    margin-bottom: 15px;
+}
+
+.highlight-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.highlight-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+.highlight-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Hover effect for desktop only */
+@media (hover: hover) {
+    .highlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* --- Timeline / Articles Section --- */
+.section-divider {
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: #27489a;
+    border-bottom: 2px solid #f0f3ff;
+    padding-bottom: 10px;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+}
+
+.travel-article {
+    display: flex;
+    gap: 20px;
+    background-color: #FFFDFC;
+    border-left: 5px solid #27489a;
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.article-date {
+    font-weight: bold;
+    color: #27489a;
+    min-width: 120px;
+}
+
+.article-content h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.article-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .travel-article {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .article-date {
+        font-size: 0.9rem;
+    }
+}

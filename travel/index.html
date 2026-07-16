@@ -6,11 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panithan | Home</title>
+    <title>Panithan | Travel</title>
     
     <!-- Loading CSS and JavaScript Files -->
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/travel.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/icons/Winglet.svg">
@@ -25,45 +26,27 @@
 
     <!-- Content within Page -->
     <main class="main-container">
-        <!-- Intro Message -->
-        <h1 class="introHeader" id="typewriter-text" data-text="Hi! Welcome to my website! | My name is Panithan!">
-            <span id="text-content"></span>
-        </h1>
         
-        <!-- About Me -->
-        <div class="about-container fade-in-section">
-            <!-- Profile Picture -->
-            <div class="about-image-wrapper">
-                <img class="profile-pic" src="/assets/images/Profile.webp" alt="Panithan Lertsuntivit"
-                    width="1000" height="1000">
-            </div>
+        <!-- Randomized Highlights Section -->
+        <h1 class="introHeader">Featured Travel Highlights</h1>
+        <section id="random-highlights" class="highlights-container fade-in-section">
+            <!-- Injection of 3 randomized cards (JavaScript) -->
+        </section>
+
+        <!-- Chronological Articles Section -->
+        <h2 class="section-divider">Trips</h2>
+        <section id="travel-timeline" class="timeline-container">
             
-            <!-- About Text -->
-            <div class="about-content">
-                <p>
-                    I'm a UC Berkeley Mechanical Engineering Graduate. 
-                </p>
-                <p>
-                    During my studies, I served as the Avionics lead for Aerospace SAE at UC Berkeley where I worked on the propulsion and telemetry systems. Additionally, I was a teaching assistant instructing engineering courses focused on hardware integration and embedded development.
-                </p>
-
-                <p>
-                    Feel free to view my <a href="/assets/Panithan_Lertsuntivit_Experience.pdf" target="_blank">experiences here</a>.
-                </p>
+            <!-- Travel Logs -->
+            <article class="travel-article fade-in-section">
+                <div class="article-date">Coming Soon!</div>
+                <div class="article-content">
+                    <h3>Travel Log</h3>
+                    <p>Writing in progress...</p>
                 </div>
-        </div>
-
-        <div class="about-container fade-in-section">
-            <div>
-                <!-- Recreation -->
-                <p>
-                    When possible, I love to travel and try new types of food with friends. Curious about my travels? Check out the travel page to see my adventures! 
-                </p>
-                <p>
-                    Or feel free to browse through my website to see what I've done. 
-                </p>
-            </div>
-        </div>
+            </article>
+            
+        </section>
         
     </main>
 
@@ -80,8 +63,8 @@
     <!-- Javascript Files -->
     <script src="/scripts/curtain-menu.js"></script>
     <script src="/scripts/update-date.js"></script>
-    <script src="/scripts/typing.js"></script>
     <script src="/scripts/fade-in.js"></script>
+    <script src="/scripts/travel-highlights.js"></script>
     <script>
         // Native Vanilla JS fetch
         document.addEventListener("DOMContentLoaded", () => {
